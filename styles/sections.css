@@ -44,10 +44,10 @@
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    color: rgba(169, 107, 14, 0.6);
+    color: rgba(169, 107, 14, 0.831);
     margin-bottom: 1rem;
     line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(26, 22, 16, 0.4);
+    text-shadow: 2px 2px 4px rgba(26, 22, 16, 0.625);
 }
 
 .hero-subtitle-line {
