@@ -22,9 +22,9 @@ body {
 
 /* Color Variables */
 :root {
-    --primary-color: #1e40af;      /* Dark blue */
-    --primary-light: #3b82f6;     /* Lighter blue */
-    --primary-dark: #1e3a8a;      /* Darker blue */
+    --primary-color: #D7A95D;      /* Dark blue */
+    --primary-light: #D6B07C;     /* Lighter blue */
+    --primary-dark: #63543f;      /* Darker blue */
     --text-primary: #1f2937;      /* Dark gray */
     --text-secondary: #6b7280;    /* Medium gray */
     --text-light: #9ca3af;       /* Light gray */
@@ -200,7 +200,7 @@ a:hover {
 .form-textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    box-shadow: 0 0 0 3px rgba(169, 107, 14, 0.4);
 }
 
 .form-textarea {

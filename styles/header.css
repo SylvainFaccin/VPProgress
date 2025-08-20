@@ -39,8 +39,8 @@
 .logo-placeholder {
     width: 40px;
     height: 40px;
-    background-color: var(--primary-color);
-    color: white;
+    background-image: url("../resources/img/LogoVPP.png");
+    background-size: contain;
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
