@@ -37,3 +37,34 @@ Technical requirements
 	•	Lightweight and fast-loading.
 	•	Easy to replace placeholder images and texts.
 	•	Compatible with standard hosting environments.
+
+2nd
+
+Generate a simple, static one-page website for a sports communication and sponsorship agency based in Toulouse.
+
+Requirements:
+	•	All content must be written directly inside the index.html file using standard semantic HTML (<header>, <section>, <footer>).
+	•	No JSON, no external JavaScript frameworks, no API calls.
+	•	Keep everything self-contained: HTML for structure, CSS for styling.
+	•	Create multiple CSS files (e.g. global.css, header.css, sections.css, footer.css) and link them in the <head> of index.html.
+	•	Use smooth scrolling with pure CSS if possible. Avoid JavaScript unless strictly necessary.
+	•	Responsive design (desktop + mobile).
+
+Structure of the page (single page with anchor navigation):
+	1.	Header: fixed navigation bar with anchor links (Accueil, Notre projet, Nos athlètes, Qui sommes-nous, Contact).
+	2.	Hero (Accueil): full-width background image of Toulouse, with a headline: “Agence de communication & sponsoring sportif – Toulouse” and a short subtext.
+	3.	Notre projet: section with a short explanatory paragraph about the agency’s mission.
+	4.	Nos athlètes: grid of athlete cards (placeholder images, name, sport, short description).
+	5.	Qui sommes-nous ?: presentation of the 3 founders (either group text or individual mini bios with placeholder photos).
+	6.	Contact: simple form (name, email, message) + placeholder email address + placeholder social media links.
+	7.	Footer: copyright line.
+
+Design guidelines:
+	•	Clean and modern, white background, black text, with one accent color (dark blue).
+	•	Minimalistic but professional look.
+	•	Separate styling per CSS file (global.css for fonts/colors, header.css for navigation, sections.css for sections, footer.css for footer).
+
+Deliverables:
+	•	index.html fully written with all content inline (no JSON).
+	•	A styles/ folder containing at least 3 CSS files: global.css, header.css, sections.css, footer.css.
+	•	Code must be clean, commented, and easy to modify manually.
