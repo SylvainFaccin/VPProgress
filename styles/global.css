@@ -16,21 +16,25 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333333;
-    background-color: #ffffff;
+    background-color: #121212;
     overflow-x: hidden;
 }
 
 /* Color Variables */
 :root {
-    --primary-color: #D7A95D;      /* Dark blue */
-    --primary-light: #D6B07C;     /* Lighter blue */
-    --primary-dark: #63543f;      /* Darker blue */
-    --text-primary: #37301f;      /* Dark gray */
-    --text-secondary: #807a6b;    /* Medium gray */
-    --text-light: #afaa9c;       /* Light gray */
-    --background-white: #ffffff;
-    --background-gray: #f9fafb;
-    --background-dark: #271e11;
+
+    --primary-color: #FF7A00;    /* Orange principal */
+    --primary-light: #FFA94D;    /* Orange clair (hover, accents) */
+    --primary-dark: #CC5F00;     /* Orange foncé (contraste) */
+
+    --text-primary: #121212;     /* Texte principal (quasi blanc, doux sur fond sombre) */
+    --text-secondary: #B3B3B3;   /* Texte secondaire (gris clair) */
+    --text-light: #808080;       /* Texte atténué (icônes, disabled, placeholder) */
+    
+    --background-white: #121212; /* Pour cartes/fonds clairs si besoin */
+    --background-gray: #1E1E1E;  /* Noir adouci (sections, conteneurs) */
+    --background-dark: #121212;  /* Noir profond (fond principal) */
+
     --border-color: #ebe9e5;
     --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
     --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
