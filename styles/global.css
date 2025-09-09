@@ -27,7 +27,7 @@ body {
     --primary-light: #FFA94D;    /* Orange clair (hover, accents) */
     --primary-dark: #CC5F00;     /* Orange foncé (contraste) */
 
-    --text-primary: #121212;     /* Texte principal (quasi blanc, doux sur fond sombre) */
+    --text-primary: #d0d0d0;     /* Texte principal (quasi blanc, doux sur fond sombre) */
     --text-secondary: #B3B3B3;   /* Texte secondaire (gris clair) */
     --text-light: #808080;       /* Texte atténué (icônes, disabled, placeholder) */
     
