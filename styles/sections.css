@@ -199,7 +199,7 @@
 }
 
 .athletes-grid {
-    display: grid;
+    display: center;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 2rem;
     justify-items: center;
@@ -215,7 +215,7 @@
     height: 400px;
     display: flex;
     flex-direction: column;   
-    width: 500px;
+    width: 55%;
 }
 
 .athlete-card:hover {
