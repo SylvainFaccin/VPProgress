@@ -23,9 +23,9 @@ body {
 /* Color Variables */
 :root {
 
-    --primary-color: #FF7A00;    /* Orange principal */
-    --primary-light: #FFA94D;    /* Orange clair (hover, accents) */
-    --primary-dark: #CC5F00;     /* Orange foncé (contraste) */
+    --primary-color: #dcb267;    /* Orange principal */
+    --primary-light: #fcd083;    /* Orange clair (hover, accents) */
+    --primary-dark: #b59153;     /* Orange foncé (contraste) */
 
     --text-primary: #d0d0d0;     /* Texte principal (quasi blanc, doux sur fond sombre) */
     --text-secondary: #B3B3B3;   /* Texte secondaire (gris clair) */
