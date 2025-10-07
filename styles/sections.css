@@ -483,7 +483,7 @@
     font-size: 1.5rem;
     width: 48px;
     height: 48px;
-    background-color: rgba(30, 64, 175, 0.1);
+    background-color: var(--shadow-light);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
