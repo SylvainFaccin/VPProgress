@@ -23,17 +23,26 @@ body {
 /* Color Variables */
 :root {
 
-    --primary-color: #dcb267;    /* Orange principal */
-    --primary-light: #fcd083;    /* Orange clair (hover, accents) */
-    --primary-dark: #b59153;     /* Orange foncé (contraste) */
+    --primary-color: #dcb267;
+    /* Orange principal */
+    --primary-light: #fcd083;
+    /* Orange clair (hover, accents) */
+    --primary-dark: #b59153;
+    /* Orange foncé (contraste) */
 
-    --text-primary: #d0d0d0;     /* Texte principal (quasi blanc, doux sur fond sombre) */
-    --text-secondary: #B3B3B3;   /* Texte secondaire (gris clair) */
-    --text-light: #808080;       /* Texte atténué (icônes, disabled, placeholder) */
-    
-    --background-white: #121212; /* Pour cartes/fonds clairs si besoin */
-    --background-gray: #1E1E1E;  /* Noir adouci (sections, conteneurs) */
-    --background-dark: #121212;  /* Noir profond (fond principal) */
+    --text-primary: #d0d0d0;
+    /* Texte principal (quasi blanc, doux sur fond sombre) */
+    --text-secondary: #B3B3B3;
+    /* Texte secondaire (gris clair) */
+    --text-light: #808080;
+    /* Texte atténué (icônes, disabled, placeholder) */
+
+    --background-white: #121212;
+    /* Pour cartes/fonds clairs si besoin */
+    --background-gray: #1E1E1E;
+    /* Noir adouci (sections, conteneurs) */
+    --background-dark: #121212;
+    /* Noir profond (fond principal) */
 
     --border-color: #ebe9e5;
     --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -46,7 +55,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     line-height: 1.2;
     color: var(--text-primary);
@@ -217,27 +231,27 @@ a:hover {
     html {
         font-size: 14px;
     }
-    
+
     .container {
         padding: 0 1rem;
     }
-    
+
     .section {
         padding: 3rem 0;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.75rem;
     }
-    
+
     h3 {
         font-size: 1.25rem;
     }
@@ -247,11 +261,11 @@ a:hover {
     .container {
         padding: 0 0.75rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
-    
+
     h1 {
         font-size: 1.75rem;
     }
@@ -270,17 +284,45 @@ a:hover {
     text-align: right;
 }
 
-.mb-1 { margin-bottom: 0.25rem; }
-.mb-2 { margin-bottom: 0.5rem; }
-.mb-3 { margin-bottom: 1rem; }
-.mb-4 { margin-bottom: 1.5rem; }
-.mb-5 { margin-bottom: 2rem; }
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
 
-.mt-1 { margin-top: 0.25rem; }
-.mt-2 { margin-top: 0.5rem; }
-.mt-3 { margin-top: 1rem; }
-.mt-4 { margin-top: 1.5rem; }
-.mt-5 { margin-top: 2rem; }
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+    margin-bottom: 2rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mt-5 {
+    margin-top: 2rem;
+}
 
 /* Loading and Animation Classes */
 .fade-in {
@@ -312,7 +354,7 @@ a:hover {
     html {
         scroll-behavior: auto;
     }
-    
+
     *,
     *::before,
     *::after {
