@@ -58,9 +58,7 @@ body {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
     font-weight: 600;
     line-height: 1.2;
     color: var(--text-primary);
@@ -140,91 +138,10 @@ a:hover {
 }
 
 /* Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all var(--transition-medium);
-    text-decoration: none;
-    gap: 0.5rem;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-}
-
-.btn-outline:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
 
 /* Cards */
-.card {
-    background-color: var(--background-white);
-    border-radius: var(--border-radius-large);
-    box-shadow: var(--shadow-light);
-    transition: all var(--transition-medium);
-    overflow: hidden;
-}
-
-.card:hover {
-    box-shadow: var(--shadow-large);
-    transform: translateY(-4px);
-}
 
 /* Form Elements */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-label {
-    display: block;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-
-.form-input,
-.form-textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    transition: border-color var(--transition-fast);
-    background-color: var(--background-white);
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(169, 107, 14, 0.4);
-}
-
-.form-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -272,74 +189,13 @@ a:hover {
 }
 
 /* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.mb-1 {
-    margin-bottom: 0.25rem;
-}
-
-.mb-2 {
-    margin-bottom: 0.5rem;
-}
-
-.mb-3 {
-    margin-bottom: 1rem;
-}
-
-.mb-4 {
-    margin-bottom: 1.5rem;
-}
-
-.mb-5 {
-    margin-bottom: 2rem;
-}
-
-.mt-1 {
-    margin-top: 0.25rem;
-}
-
-.mt-2 {
-    margin-top: 0.5rem;
-}
-
-.mt-3 {
-    margin-top: 1rem;
-}
-
-.mt-4 {
-    margin-top: 1.5rem;
-}
-
-.mt-5 {
-    margin-top: 2rem;
-}
 
 /* Loading and Animation Classes */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 0.6s ease forwards;
-}
 
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
-}
-
-.slide-up {
-    transform: translateY(30px);
-    opacity: 0;
-    animation: slideUp 0.6s ease forwards;
 }
 
 @keyframes slideUp {
@@ -371,18 +227,3 @@ a:hover {
 }
 
 /* Skip to content link for screen readers */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--primary-color);
-    color: white;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    z-index: 1000;
-}
-
-.skip-link:focus {
-    top: 6px;
-}

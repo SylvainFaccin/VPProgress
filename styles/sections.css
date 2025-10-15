@@ -410,13 +410,6 @@
     background-color: var(--background-gray);
 }
 
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
 .contact-description {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
@@ -429,16 +422,14 @@
     gap: 1.5rem;
 }
 
-.contact-info-card,
-.social-media-card {
+.contact-info-card {
     background-color: var(--background-white);
     padding: 2rem;
     border-radius: var(--border-radius-large);
     box-shadow: var(--shadow-light);
 }
 
-.contact-info-title,
-.social-title {
+.contact-info-title {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-primary);
@@ -539,18 +530,12 @@
         gap: 1.5rem;
     }
 
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
     .vision-card {
         padding: 2rem;
     }
 
-    .contact-form-container,
-    .contact-info-card,
-    .social-media-card {
+    
+    .contact-info-card {
         padding: 1.5rem;
     }
 }
@@ -576,9 +561,5 @@
     .feature-card,
     .founder-card {
         padding: 1.5rem;
-    }
-
-    .social-links {
-        justify-content: center;
     }
 }

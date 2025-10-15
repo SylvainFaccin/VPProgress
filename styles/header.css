@@ -199,10 +199,6 @@
 }
 
 /* Header scroll effect */
-.header.scrolled {
-    background-color: black;
-    box-shadow: var(--shadow-medium);
-}
 
 /* Smooth scrolling offset for fixed header */
 html {
