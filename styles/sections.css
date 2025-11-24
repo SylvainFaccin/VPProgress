@@ -206,7 +206,7 @@
 .project-section {
     background-color: var(--background-white);
     /* Optionnel : un dégradé très subtil pour donner de la profondeur */
-    background: linear-gradient(to bottom, var(--background-white) 0%, #f8f9fa 700%);
+    background: linear-gradient(to bottom, var(--background-white) 0%, #f8f9fa 1000%);
     padding: 6rem 0;
 }
 
@@ -482,7 +482,7 @@
 .expertise-tag {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background-color: rgba(30, 64, 175, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     color: var(--primary-color);
     font-size: 0.8rem;
     font-weight: 500;
