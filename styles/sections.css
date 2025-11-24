@@ -202,56 +202,104 @@
     }
 }
 
-/* Project Section */
+/* Project Section - Style Luxe */
 .project-section {
     background-color: var(--background-white);
+    /* Optionnel : un dégradé très subtil pour donner de la profondeur */
+    background: linear-gradient(to bottom, var(--background-white) 0%, #f8f9fa 700%);
+    padding: 6rem 0;
 }
 
 .project-description {
-    font-size: 1.125rem;
+    font-size: 1.2rem; /* Un peu plus grand pour le confort de lecture */
     text-align: center;
-    max-width: 900px;
-    margin: 0 auto 3rem;
+    max-width: 800px;
+    margin: 0 auto 4rem;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.8;
+    font-weight: 300; /* Texte fin = élégance */
+}
+
+.project-description .highlight {
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
 .project-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    /* On impose 2 colonnes de taille égale */
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; /* Espace entre les cartes */
+    
+    /* IMPORTANT pour le look Luxe : */
+    /* On limite la largeur totale de la grille pour éviter que les cartes */
+    /* soient trop étirées sur les écrans géants. */
+    max-width: 1000px; 
+    margin: 3rem auto 0; /* Centre la grille horizontalement */
 }
 
 .feature-card {
-    text-align: center;
-    padding: 2rem;
-    border-radius: var(--border-radius-large);
-    transition: all var(--transition-medium);
-    background-color: var(--background-white);
+    text-align: left; /* Le luxe préfère souvent l'alignement à gauche ou justifié */
+    padding: 2.5rem;
+    background-color: transparent;
+    /* Bordure fine et élégante au lieu d'une ombre */
+    border: 1px solid rgba(0, 0, 0, 0.08); 
+    border-radius: 4px; /* Arrondi très léger, presque carré */
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Effet au survol : on ne bouge pas la carte, on change subtilement le style */
 .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+    background-color: #232323;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Ombre très diffuse et légère */
+}
+
+.feature-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.03); /* Fond très léger pour l'icône */
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+    background-color: var(--primary-color); /* L'icône s'allume au survol */
 }
 
 .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
+    width: 28px;
+    height: 28px;
+    color: var(--primary-color); /* Couleur de base de l'icône */
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    color: #fff; /* L'icône devient blanche au survol */
 }
 
 .feature-title {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1rem;
+    letter-spacing: 0.5px; /* Espacement des lettres = premium */
+    text-transform: uppercase; /* Titres en majuscules pour l'autorité */
+    font-size: 0.9rem; /* Mais en petit pour rester discret */
 }
 
 .feature-description {
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 0;
 }
 
 /* Athletes Section */
@@ -259,24 +307,32 @@
     background-color: var(--background-gray);
 }
 
+/* Grille des Athlètes */
 .athletes-grid {
-    display: center;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* Suppression de 'display: center;' car cette propriété n'existe pas. */
+    display: grid;
+    /* Crée des colonnes flexibles : au moins 250px, et autant que possible (1fr) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    justify-items: center;
+    /* Centre le contenu de la grille si l'espace le permet (utile avec une largeur limitée) */
+    justify-content: center;
     margin-bottom: 3rem;
+    max-width: 1200px; /* Ajout d'une largeur max pour une meilleure lisibilité */
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Carte d'Athlète */
 .athlete-card {
     background-color: var(--background-white);
     border-radius: var(--border-radius-large);
     overflow: hidden;
     box-shadow: var(--shadow-light);
     transition: all var(--transition-medium);
-    height: 400px;
+    /* Retrait du 'height: 400px;' pour laisser le contenu déterminer la hauteur */
     display: flex;
     flex-direction: column;
-    width: 55%;
+    /* Retrait du 'width: 55%;' pour que la carte prenne la place allouée par la grille (1fr) */
 }
 
 .athlete-card:hover {
@@ -287,7 +343,8 @@
 .athlete-image {
     position: relative;
     overflow: hidden;
-    height: 450px;
+    /* Ajustement de la hauteur relative : par exemple 60% de la carte ou un ratio fixe */
+    height: 250px; /* Une hauteur fixe est souvent mieux pour uniformiser la grille */
 }
 
 .athlete-image img {
@@ -303,6 +360,8 @@
 
 .athlete-info {
     padding: 1.5rem;
+    /* Utilisation de flex-grow pour que cette zone prenne l'espace restant dans le mode flex */
+    flex-grow: 1; 
 }
 
 .athlete-name {
@@ -325,6 +384,7 @@
     margin-bottom: 0;
 }
 
+/* CTA */
 .athletes-cta {
     text-align: center;
     margin-top: 3rem;
