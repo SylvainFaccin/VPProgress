@@ -20,7 +20,7 @@
     height: 100%;
     background-image: url("../resources/img/WallpaperVPP.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: 50% 10%;
     background-repeat: no-repeat;
     z-index: -2;
 }
@@ -31,7 +31,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(169, 107, 14, 0.4));
+
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+
     z-index: -1;
 }
 
@@ -41,38 +45,85 @@
     z-index: 1;
 }
 
+.logo-title {
+    width: clamp(200px, 25vw, 400px);
+    height: clamp(200px, 25vw, 400px);
+
+    background-image: url("../resources/img/LogoVPP.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: clamp(-2rem, -20vw, -6rem);
+}
+
+@media (min-width: 1200px) {
+    .logo-title {
+        margin-bottom: -4rem;
+    }
+
+    .hero-subtitle-line {
+        width: 50%;
+        height: 12px;
+    }
+}
+
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
-    color: var(--primary-color);
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+
     margin-bottom: 1rem;
-    line-height: 1.1;
+    line-height: clamp(1.1, 3vw, 1.4);
+
+    text-shadow: 2px 2px 4px rgba(26, 22, 16, 0.625);
+}
+
+.hero-title2 {
+    font-size: clamp(1rem, 2.5vw, 1.4rem); /* corrigé */
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    line-height: clamp(1.1, 3vw, 1.3);
+
     text-shadow: 2px 2px 4px rgba(26, 22, 16, 0.625);
 }
 
 .hero-subtitle-line {
-    width: 80px;
-    height: 4px;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: clamp(40%, 10vw, 80%); /* corrigé */
+    height: 10px;
+    background-color: var(--primary-color);
     margin: 0 auto 1.5rem;
-    border-radius: 2px;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
     line-height: 1.6;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* BOUTON CTA */
 .hero-cta {
+    font-size: clamp(0.9rem, 2vw, 1.2rem); /* corrigé */
+    font-weight: 700;
+    font-family: 'Italianno';
+
     display: inline-flex;
     align-items: center;
     padding: 1rem 2rem;
     background-color: white;
     color: var(--primary-color);
-    font-weight: 600;
+
     border-radius: var(--border-radius);
     text-decoration: none;
     transition: all var(--transition-medium);
@@ -85,6 +136,7 @@
     box-shadow: var(--shadow-large);
     color: var(--primary-dark);
 }
+
 
 /* Scroll Indicator */
 .scroll-indicator {
