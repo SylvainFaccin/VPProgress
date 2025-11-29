@@ -15,17 +15,23 @@
     height: 70px;
 }
 
+/* Conteneur de la barre de navigation */
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* Pousse le premier élément (logo) à gauche et le reste à droite */
+    justify-content: space-between; 
     height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    
+    /* 1. Prend toute la largeur de l'écran */
+    width: 100%; 
+    /* 2. Ajoute un petit espace sur les côtés pour éviter que le contenu ne colle au bord */
+    padding: 0 1rem; 
+    /* 3. S'assure qu'il n'y a pas de marges externes qui pourraient le centrer */
+    margin: 0; 
 }
 
-/* Logo Styles */
+/* Styles du Logo */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -33,13 +39,17 @@
     font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
+    /* S'assure que le logo est le premier élément à gauche */
+    margin-right: auto; 
 }
 
+/* Placeholder pour l'image du logo */
 .logo-placeholder {
     width: 40px;
     height: 40px;
     background-image: url("../resources/img/LogoVPP.png");
     background-size: contain;
+    background-repeat: no-repeat; /* Ajouté pour s'assurer que l'image ne se répète pas */
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
@@ -57,18 +67,20 @@
 
 /* Desktop Navigation Menu */
 .nav-menu {
+    font-family: 'Quicksand', sans-serif;
     display: flex;
     list-style: none;
     gap: 2rem;
     margin: 0;
     padding: 0;
+    /* CHANGEMENT ICI : Valeur spécifique et très grande pour la police */
+    font-size: large; 
 }
 
 .nav-link {
     position: relative;
     color: var(--text-secondary);
     font-weight: bold;
-    font-size: 0.95rem;
     padding: 0.5rem 0;
     transition: color var(--transition-fast);
     text-decoration: none;
