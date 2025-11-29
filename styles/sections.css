@@ -309,83 +309,118 @@
     background-color: var(--background-gray);
 }
 
-/* Grille des Athlètes */
+/* ======================================= */
+/* I. GRILLE DES CARTES (Conteneur Parent) */
+/* ======================================= */
 .athletes-grid {
-    /* Suppression de 'display: center;' car cette propriété n'existe pas. */
     display: grid;
     /* Crée des colonnes flexibles : au moins 250px, et autant que possible (1fr) */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    /* Centre le contenu de la grille si l'espace le permet (utile avec une largeur limitée) */
     justify-content: center;
     margin-bottom: 3rem;
-    max-width: 1200px; /* Ajout d'une largeur max pour une meilleure lisibilité */
+    max-width: 1200px; 
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Carte d'Athlète */
+/* ======================================= */
+/* II. CARTE ATHLÈTE (Conteneur de base)   */
+/* ======================================= */
 .athlete-card {
-    background-color: var(--background-white);
+    /* Clé du positionnement : La référence pour les éléments absolus */
+    position: relative;
+    justify-self: center;
+    background-color: var(--background-white); /* Non visible si l'image prend 100% */
     border-radius: var(--border-radius-large);
-    overflow: hidden;
+    overflow: hidden; 
     box-shadow: var(--shadow-light);
     transition: all var(--transition-medium);
-    /* Retrait du 'height: 400px;' pour laisser le contenu déterminer la hauteur */
-    display: flex;
-    flex-direction: column;
-    /* Retrait du 'width: 55%;' pour que la carte prenne la place allouée par la grille (1fr) */
+    
+    /* Hauteur fixe pour l'effet de superposition (ajuste si besoin) */
+    height: 600px; 
+    width: 80%;
 }
 
-.athlete-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-large);
-}
-
-.athlete-image {
-    position: relative;
-    overflow: hidden;
-    /* Ajustement de la hauteur relative : par exemple 60% de la carte ou un ratio fixe */
-    height: 250px; /* Une hauteur fixe est souvent mieux pour uniformiser la grille */
-}
-
-.athlete-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-medium);
-}
-
+/* Effet au survol sur l'image (Gardé) */
 .athlete-card:hover .athlete-image img {
     transform: scale(1.05);
 }
-
-.athlete-info {
-    padding: 1.5rem;
-    /* Utilisation de flex-grow pour que cette zone prenne l'espace restant dans le mode flex */
-    flex-grow: 1; 
+.athlete-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
 }
 
+/* Conteneur et Image */
+.athlete-image {
+    width: 100%;
+    height: 100%;
+}
+.athlete-image img {
+    width: 100%;
+    height: 100%;
+    /* S'assure que l'image couvre tout le conteneur */
+    object-fit: cover; 
+    display: block;
+    transition: transform var(--transition-medium); /* Pour l'effet scale */
+}
+
+/* ======================================= */
+/* III. INFOS (Superposition et Style)     */
+/* ======================================= */
+.athlete-info {
+    /* Clé de la superposition : Placement absolu sur l'image */
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    z-index: 10;
+    
+    /* Intégration de ton padding d'origine */
+    padding: 1.5rem; 
+    color: white; /* Texte en blanc pour le contraste sur le fond sombre */
+    
+    /* L'effet "background flou/sombre" */
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%, 
+        rgba(0, 0, 0, 0.5) 50%, 
+        rgba(0, 0, 0, 0) 100% 
+    );
+}
+
+/* Styles du Nom (Intégration de tes valeurs) */
 .athlete-name {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: white; /* Doit être blanc pour être visible sur le gradient */
+    margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
+/* Styles du Sport (Intégration de tes valeurs) */
 .athlete-sport {
-    color: var(--primary-color);
+    /* Tu peux choisir de garder primary-color si elle contraste bien avec le noir, 
+       ou utiliser white si elle ne l'est pas. J'utilise la tienne par défaut. */
+    color: var(--primary-color); 
     font-weight: 500;
     margin-bottom: 1rem;
     font-size: 0.95rem;
 }
 
+/* Styles de la Description (Intégration de tes valeurs) */
 .athlete-description {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8); /* Blanc légèrement transparent pour la description */
     line-height: 1.6;
     margin-bottom: 0;
+    font-size: 0.95rem; /* Ajusté pour cohérence */
+    /* Cache par défaut pour plus de clarté dans la carte */
+    display: none; 
 }
-
+/* Tu peux l'afficher au survol si tu veux un effet dynamique */
+.athlete-card:hover .athlete-description {
+    display: block; 
+}
 /* CTA */
 .athletes-cta {
     text-align: center;
