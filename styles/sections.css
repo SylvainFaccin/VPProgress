@@ -210,6 +210,7 @@
     padding: 6rem 0;
 }
 
+/* Styles pour la description (inchangé) */
 .project-description {
     font-size: 1.2rem; /* Un peu plus grand pour le confort de lecture */
     text-align: center;
@@ -225,18 +226,19 @@
     font-weight: 500;
 }
 
+/* 🏆 Styles pour afficher les trois cartes sur une seule ligne (Écrans larges) */
 .project-features {
     display: grid;
-    /* On impose 2 colonnes de taille égale */
-    grid-template-columns: 1fr 1fr; 
+    /* CECI EST LA CLÉ : Trois colonnes de largeur égale */
+    grid-template-columns: 1fr 1fr 1fr; 
     gap: 2rem; /* Espace entre les cartes */
     
-    /* IMPORTANT pour le look Luxe : */
-    /* On limite la largeur totale de la grille pour éviter que les cartes */
-    /* soient trop étirées sur les écrans géants. */
+    /* On limite la largeur totale de la grille et on la centre */
     max-width: 1000px; 
-    margin: 3rem auto 0; /* Centre la grille horizontalement */
+    margin: 3rem auto 0; 
 }
+
+
 
 .feature-card {
     text-align: left; /* Le luxe préfère souvent l'alignement à gauche ou justifié */
