@@ -493,6 +493,61 @@
     color: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+/* =======================================
+   RESPONSIVE ATHLÈTES
+   ======================================= */
+
+/* Pour les tablettes et petits ordinateurs */
+@media (max-width: 1024px) {
+    .athletes-grid {
+        gap: 3rem; /* On réduit l'espace de moitié */
+        padding: 0 20px;
+         display: grid !important;
+        grid-template-columns: 1fr 1fr !important; 
+    }
+}
+
+/* Pour les téléphones */
+@media (max-width: 768px) {
+    .athletes-grid {
+        /* On force les 2 colonnes et on annule toute limite de largeur de colonne */
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; 
+        
+        /* On réduit l'espace au minimum pour que ça rentre */
+        gap: 10px !important; 
+        padding: 0 10px !important;
+        max-width: 100% !important;
+    }
+
+    .athlete-card {
+        /* On annule le max-width qui bloquait peut-être l'affichage côte à côte */
+        max-width: 100% !important;
+        
+        /* On réduit la hauteur car en largeur 50%, 500px c'est trop haut */
+        height: 350px !important; 
+    }
+
+    /* On réduit la taille du texte car les cartes sont devenues très étroites */
+    .athlete-name {
+        font-size: 0.9rem !important;
+    }
+
+    .athlete-sport {
+        font-size: 0.7rem !important;
+    }
+
+    /* On cache la description sur mobile : dans une petite carte de 150px de large, 
+       le texte va recouvrir tout le visage de l'athlète */
+    .athlete-description {
+        display: none !important;
+    }
+
+    .athlete-badge {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
 
 /* =======================================
    SECTION NOS RÉALISATIONS
@@ -581,22 +636,39 @@
 .realisations-text-content .cta-button:hover i {
     transform: translateY(5px); /* La flèche descend au survol */
 }
-
-/* --- RESPONSIVE --- */
+/* =======================================
+   RESPONSIVE : Adaptation pour Mobile
+   ======================================= */
 @media (max-width: 992px) {
     .realisations-content-wrapper {
-        grid-template-columns: 1fr; /* On passe sur une seule colonne */
-        gap: 3rem;
-    }
-    
-    .realisations-text-content {
-        text-align: center;
-        order: -1; /* Optionnel : affiche le texte AVANT les images sur mobile */
+        grid-template-columns: 1fr; /* Une seule colonne */
+        gap: 2rem;
+        display: flex; /* On passe en flex pour utiliser 'order' facilement */
+        flex-direction: column; 
     }
 
+    /* On donne l'ordre 1 à la galerie pour qu'elle passe EN PREMIER */
     .realisations-gallery {
-        max-width: 600px;
+        order: 1; 
+        max-width: 100%; /* Elle prend toute la largeur du téléphone */
         margin: 0 auto;
+    }
+
+    /* On donne l'ordre 2 au texte pour qu'il passe EN DEUXIÈME */
+    .realisations-text-content {
+        order: 2; 
+        text-align: center;
+        padding: 0;
+    }
+
+    /* On réduit un peu la hauteur des images sur mobile pour ne pas trop scroller */
+    .gallery-item img {
+        height: 350px; 
+    }
+
+    .realisations-subtitle {
+        font-size: 1.8rem;
+        margin-top: 1rem;
     }
 }
 
@@ -803,61 +875,79 @@
     transform: translateY(-2px);
 }
 
-/* Responsive Design for Sections */
+/* ==========================================================
+   DESIGN RESPONSIVE GLOBAL (Tablettes et Mobiles)
+   ========================================================== */
+
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
+    /* --- HERO --- */
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.125rem; }
 
-    .hero-subtitle {
-        font-size: 1.125rem;
-    }
-
-    .project-features {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
+    /* --- SECTION ATHLÈTES --- */
     .athletes-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: 1fr; /* Une carte par ligne */
+        gap: 2rem; /* On oublie le gap de 6rem ici */
+        padding: 0 10px;
     }
 
-    .founders-grid {
+    .athlete-card {
+        height: 500px; /* Un peu moins haut sur mobile */
+        max-width: 350px; /* Reste élégant et centré */
+    }
+
+    /* Important : rendre la description visible sur mobile car pas de survol souris */
+    .athlete-description {
+        max-height: 150px;
+        opacity: 1;
+        margin-top: 10px;
+    }
+
+    /* --- SECTION RÉALISATIONS --- */
+    .realisations-content-wrapper {
+        display: flex;
+        flex-direction: column; /* Empilement vertical */
+        gap: 2.5rem;
+    }
+
+    .realisations-gallery {
+        order: 1; /* LES IMAGES EN PREMIER */
+        grid-template-columns: repeat(2, 1fr); /* Garde le 2x2 */
+        max-width: 100%;
+    }
+
+    .realisations-text-content {
+        order: 2; /* LE TEXTE EN DEUXIÈME */
+        text-align: center;
+        padding: 0;
+    }
+
+    .gallery-item img {
+        height: 300px; /* Ajustement hauteur pour mobile */
+    }
+
+    /* --- AUTRES GRILLES --- */
+    .project-features, .founders-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-    }
-
-    .vision-card {
-        padding: 2rem;
-    }
-
-
-    .contact-info-card {
-        padding: 1.5rem;
     }
 }
 
+/* --- AJUSTEMENTS POUR TRÈS PETITS ÉCRANS --- */
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1rem; }
+
+    .realisations-gallery {
+        /* Optionnel : passer les images en 1 seule colonne si c'est trop serré */
+        grid-template-columns: 1fr; 
     }
 
-    .hero-subtitle {
-        font-size: 1rem;
+    .gallery-item img {
+        height: 350px; /* On redonne un peu de hauteur si elles sont seules */
     }
 
-    .hero-cta {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.95rem;
-    }
-
-    .athletes-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .feature-card,
-    .founder-card {
-        padding: 1.5rem;
+    .athlete-card {
+        max-width: 100%; /* La carte prend toute la largeur disponible */
     }
 }
