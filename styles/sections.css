@@ -85,7 +85,8 @@
 }
 
 .hero-title2 {
-    font-size: clamp(1rem, 2.5vw, 1.4rem); /* corrigé */
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    /* corrigé */
     font-weight: 700;
     font-family: 'Quicksand', sans-serif;
     color: white;
@@ -98,7 +99,8 @@
 }
 
 .hero-subtitle-line {
-    width: clamp(40%, 10vw, 80%); /* corrigé */
+    width: clamp(40%, 10vw, 80%);
+    /* corrigé */
     height: 10px;
     background-color: var(--primary-color);
     margin: 0 auto 1.5rem;
@@ -114,7 +116,8 @@
 
 /* BOUTON CTA */
 .hero-cta {
-    font-size: clamp(0.9rem, 2vw, 1.2rem); /* corrigé */
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    /* corrigé */
     font-weight: 700;
     font-family: 'Italianno';
 
@@ -206,22 +209,24 @@
 .project-section {
     background-color: var(--background-white);
     /* Optionnel : un dégradé très subtil pour donner de la profondeur */
-    background: linear-gradient(to bottom, var(--background-white) 0%, #f8f9fa 1000%);
+    background: linear-gradient(to top, var(--background-white) 0%, #f8f9fa 1000%);
     padding: 6rem 0;
 }
 
 /* Styles pour la description (inchangé) */
 .project-description {
-    font-size: 1.2rem; /* Un peu plus grand pour le confort de lecture */
+    font-size: 1.2rem;
+    /* Un peu plus grand pour le confort de lecture */
     text-align: center;
     max-width: 800px;
     margin: 0 auto 4rem;
     color: var(--text-secondary);
     line-height: 1.8;
-    font-weight: 300; /* Texte fin = élégance */
+    font-weight: 300;
+    /* Texte fin = élégance */
 }
 
-.project-description .highlight {
+.highlight {
     color: var(--primary-color);
     font-weight: 500;
 }
@@ -230,23 +235,26 @@
 .project-features {
     display: grid;
     /* CECI EST LA CLÉ : Trois colonnes de largeur égale */
-    grid-template-columns: 1fr 1fr 1fr; 
-    gap: 2rem; /* Espace entre les cartes */
-    
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    /* Espace entre les cartes */
+
     /* On limite la largeur totale de la grille et on la centre */
-    max-width: 1000px; 
-    margin: 3rem auto 0; 
+    max-width: 1000px;
+    margin: 3rem auto 0;
 }
 
 
 
 .feature-card {
-    text-align: left; /* Le luxe préfère souvent l'alignement à gauche ou justifié */
+    text-align: left;
+    /* Le luxe préfère souvent l'alignement à gauche ou justifié */
     padding: 2.5rem;
     background-color: transparent;
     /* Bordure fine et élégante au lieu d'une ombre */
-    border: 1px solid rgba(0, 0, 0, 0.08); 
-    border-radius: 4px; /* Arrondi très léger, presque carré */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    /* Arrondi très léger, presque carré */
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -257,7 +265,8 @@
     border-color: var(--primary-color);
     background-color: #232323;
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Ombre très diffuse et légère */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Ombre très diffuse et légère */
 }
 
 .feature-icon-wrapper {
@@ -266,25 +275,29 @@
     justify-content: center;
     width: 60px;
     height: 60px;
-    background-color: rgba(0, 0, 0, 0.03); /* Fond très léger pour l'icône */
+    background-color: rgba(0, 0, 0, 0.03);
+    /* Fond très léger pour l'icône */
     border-radius: 50%;
     margin-bottom: 1.5rem;
     transition: background-color 0.3s ease;
 }
 
 .feature-card:hover .feature-icon-wrapper {
-    background-color: var(--primary-color); /* L'icône s'allume au survol */
+    background-color: var(--primary-color);
+    /* L'icône s'allume au survol */
 }
 
 .feature-icon {
     width: 28px;
     height: 28px;
-    color: var(--primary-color); /* Couleur de base de l'icône */
+    color: var(--primary-color);
+    /* Couleur de base de l'icône */
     transition: color 0.3s ease;
 }
 
 .feature-card:hover .feature-icon {
-    color: #fff; /* L'icône devient blanche au survol */
+    color: #fff;
+    /* L'icône devient blanche au survol */
 }
 
 .feature-title {
@@ -292,9 +305,12 @@
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1rem;
-    letter-spacing: 0.5px; /* Espacement des lettres = premium */
-    text-transform: uppercase; /* Titres en majuscules pour l'autorité */
-    font-size: 0.9rem; /* Mais en petit pour rester discret */
+    letter-spacing: 0.5px;
+    /* Espacement des lettres = premium */
+    text-transform: uppercase;
+    /* Titres en majuscules pour l'autorité */
+    font-size: 0.9rem;
+    /* Mais en petit pour rester discret */
 }
 
 .feature-description {
@@ -309,7 +325,9 @@
    ======================================= */
 
 .athletes-section {
-    background-color: var(--background-gray);
+    background-color: var(--background-white);
+    /* Optionnel : un dégradé très subtil pour donner de la profondeur */
+    background: linear-gradient(to bottom, var(--background-white) 0%, #000000 1000%);
     padding: 80px 0;
 }
 
@@ -317,27 +335,30 @@
 .athletes-grid {
     display: grid;
     /* On limite la largeur max des colonnes (400px) pour éviter qu'elles ne s'étirent trop */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
-    
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+
     /* VALEUR RÉDUITE : On passe de 10rem à 1.5rem (environ 24px) */
-    gap: 6rem; 
-    
-    justify-content: center; /* Centre les cartes horizontalement */
+    gap: 6rem;
+
+    justify-content: center;
+    /* Centre les cartes horizontalement */
     margin: 0 auto 3rem auto;
-    
+
     /* On réduit la largeur totale de la grille pour que les deux cartes soient "bloquées" ensemble */
-    max-width: 1200px; 
+    max-width: 1200px;
 }
 
 /* 2. CARTE ATHLÈTE (Conteneur principal) */
 .athlete-card {
-    position: relative; /* Référence pour le badge et les infos */
+    position: relative;
+    /* Référence pour le badge et les infos */
     height: 600px;
     width: 100%;
-    max-width: 400px; /* Évite que la carte soit trop large sur grand écran */
+    max-width: 400px;
+    /* Évite que la carte soit trop large sur grand écran */
     justify-self: center;
     border-radius: var(--border-radius-large);
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: var(--shadow-light);
     transition: all var(--transition-medium);
 }
@@ -392,7 +413,8 @@
 }
 
 .athlete-card:hover .athlete-image img {
-    transform: scale(1.08); /* Zoom léger sur l'athlète au survol */
+    transform: scale(1.08);
+    /* Zoom léger sur l'athlète au survol */
 }
 
 /* 5. BLOC INFORMATIONS (Dégradé et Texte) */
@@ -405,12 +427,10 @@
     padding: 2rem 1.5rem;
     color: white;
     /* Dégradé noir progressif pour la lisibilité */
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.9) 0%, 
-        rgba(0, 0, 0, 0.4) 60%, 
-        rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.4) 60%,
+            rgba(0, 0, 0, 0) 100%);
 }
 
 .athlete-name {
@@ -422,8 +442,9 @@
 }
 
 .athlete-sport {
-    color: var(--primary-color); /* Utilisez votre couleur or/luxe ici */
-    font-weight: 500;
+    color: var(--primary-color);
+    /* Utilisez votre couleur or/luxe ici */
+    font-weight: 1000;
     font-size: 0.9rem;
     margin-bottom: 1rem;
     letter-spacing: 0.5px;
@@ -441,7 +462,8 @@
 }
 
 .athlete-card:hover .athlete-description {
-    max-height: 100px; /* S'affiche au survol */
+    max-height: 100px;
+    /* S'affiche au survol */
     opacity: 1;
     margin-top: 10px;
 }
@@ -463,12 +485,119 @@
     letter-spacing: 1px;
     border-radius: var(--border-radius);
     transition: all 0.3s ease;
+
 }
 
 .cta-button:hover {
     background-color: var(--primary-color);
     color: white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================================
+   SECTION NOS RÉALISATIONS
+   ======================================= */
+
+.realisations-section {
+    background-color: var(--background-white);
+    /* Optionnel : un dégradé très subtil pour donner de la profondeur */
+    background: linear-gradient(to bottom, var(--background-white) 0%, #f8f9fa 1000%);
+    padding: 6rem 0;
+}
+
+/* Mise en page en deux colonnes */
+.realisations-content-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* La galerie est un peu plus large que le texte */
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+}
+
+/* --- GRILLE D'IMAGES (On ajuste pour des images fines) --- */
+.realisations-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; /* On réduit l'écart car les images sont fines */
+    justify-items: center; /* Centre les images dans leurs colonnes */
+}
+
+.gallery-item {
+    width: 100%;
+    max-width: 250px; /* Limite la largeur pour éviter que l'image ne devienne trop haute */
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    background-color: transparent; /* Pas de fond pour rester discret */
+}
+
+.gallery-item img {
+    width: 100%;
+    /* FIXE LA HAUTEUR : Ajustez cette valeur (ex: 450px ou 500px) 
+       pour que l'image tienne dans l'écran sans scroller */
+    height: 450px; 
+    
+    /* MAGIE : "contain" montre l'image entière sans zoomer dedans */
+    object-fit: contain; 
+    
+    display: block;
+    filter: grayscale(0.2);
+    transition: all 0.4s ease;
+}
+
+/* Effet au survol */
+.gallery-item:hover img {
+    filter: grayscale(0);
+    transform: scale(1.03); /* Zoom très léger pour ne pas déborder */
+}
+
+/* --- TEXTE ET CONTENU (Droite) --- */
+.realisations-text-content {
+    text-align: left;
+}
+
+.realisations-subtitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.realisations-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary); /* Utilisation de votre variable de gris */
+    margin-bottom: 2.5rem;
+}
+
+/* Gestion de l'icône dans le bouton */
+.realisations-text-content .cta-button i {
+    margin-left: 10px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.realisations-text-content .cta-button:hover i {
+    transform: translateY(5px); /* La flèche descend au survol */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .realisations-content-wrapper {
+        grid-template-columns: 1fr; /* On passe sur une seule colonne */
+        gap: 3rem;
+    }
+    
+    .realisations-text-content {
+        text-align: center;
+        order: -1; /* Optionnel : affiche le texte AVANT les images sur mobile */
+    }
+
+    .realisations-gallery {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
 
 /* About Section */
@@ -703,7 +832,7 @@
         padding: 2rem;
     }
 
-    
+
     .contact-info-card {
         padding: 1.5rem;
     }

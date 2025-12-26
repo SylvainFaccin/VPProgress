@@ -20,6 +20,12 @@ body {
     overflow-x: hidden;
 }
 
+/* Style global pour les textes importants */
+strong {
+    font-weight: 800 !important; /* On monte à 800 ou 900 pour un aspect très gras */
+    color: #ffffff;             /* On s'assure qu'il est en blanc pur (ou var(--primary-color)) */
+}
+
 /* Color Variables */
 :root {
 
