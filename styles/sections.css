@@ -304,151 +304,171 @@
     margin-bottom: 0;
 }
 
-/* Athletes Section */
+/* =======================================
+   SECTION ATHLÈTES - STYLE LUXE
+   ======================================= */
+
 .athletes-section {
     background-color: var(--background-gray);
+    padding: 80px 0;
 }
 
-/* ======================================= */
-/* I. GRILLE DES CARTES (Conteneur Parent) */
-/* ======================================= */
+/* 1. GRILLE DE MISE EN PAGE */
 .athletes-grid {
     display: grid;
-    /* Crée des colonnes flexibles : au moins 250px, et autant que possible (1fr) */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-    margin-bottom: 3rem;
+    /* On limite la largeur max des colonnes (400px) pour éviter qu'elles ne s'étirent trop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    
+    /* VALEUR RÉDUITE : On passe de 10rem à 1.5rem (environ 24px) */
+    gap: 6rem; 
+    
+    justify-content: center; /* Centre les cartes horizontalement */
+    margin: 0 auto 3rem auto;
+    
+    /* On réduit la largeur totale de la grille pour que les deux cartes soient "bloquées" ensemble */
     max-width: 1200px; 
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* ======================================= */
-/* II. CARTE ATHLÈTE (Conteneur de base)   */
-/* ======================================= */
+/* 2. CARTE ATHLÈTE (Conteneur principal) */
 .athlete-card {
-    /* Clé du positionnement : La référence pour les éléments absolus */
-    position: relative;
+    position: relative; /* Référence pour le badge et les infos */
+    height: 600px;
+    width: 100%;
+    max-width: 400px; /* Évite que la carte soit trop large sur grand écran */
     justify-self: center;
-    background-color: var(--background-white); /* Non visible si l'image prend 100% */
     border-radius: var(--border-radius-large);
     overflow: hidden; 
     box-shadow: var(--shadow-light);
     transition: all var(--transition-medium);
-    
-    /* Hauteur fixe pour l'effet de superposition (ajuste si besoin) */
-    height: 600px; 
-    width: 80%;
 }
 
-/* Effet au survol sur l'image (Gardé) */
-.athlete-card:hover .athlete-image img {
-    transform: scale(1.05);
-}
+/* Effets au survol de la carte */
 .athlete-card:hover {
     box-shadow: var(--shadow-hover);
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
-/* Conteneur et Image */
+/* 3. LE BADGE (Logo Division en haut à droite) */
+.athlete-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    width: 75px;
+    height: 75px;
+    /* background: rgba(255, 255, 255, 0.05); Effet translucide */
+    /*  backdrop-filter: blur(8px);          /*  Effet flou (Luxe) */
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: transform 0.4s ease;
+}
+
+.athlete-badge img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.athlete-card:hover .athlete-badge {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* 4. GESTION DE L'IMAGE DE FOND */
 .athlete-image {
     width: 100%;
     height: 100%;
 }
+
 .athlete-image img {
     width: 100%;
     height: 100%;
-    /* S'assure que l'image couvre tout le conteneur */
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
-    transition: transform var(--transition-medium); /* Pour l'effet scale */
+    transition: transform var(--transition-medium);
 }
 
-/* ======================================= */
-/* III. INFOS (Superposition et Style)     */
-/* ======================================= */
+.athlete-card:hover .athlete-image img {
+    transform: scale(1.08); /* Zoom léger sur l'athlète au survol */
+}
+
+/* 5. BLOC INFORMATIONS (Dégradé et Texte) */
 .athlete-info {
-    /* Clé de la superposition : Placement absolu sur l'image */
     position: absolute;
-    bottom: 0; 
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 10;
-    
-    /* Intégration de ton padding d'origine */
-    padding: 1.5rem; 
-    color: white; /* Texte en blanc pour le contraste sur le fond sombre */
-    
-    /* L'effet "background flou/sombre" */
+    padding: 2rem 1.5rem;
+    color: white;
+    /* Dégradé noir progressif pour la lisibilité */
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.8) 0%, 
-        rgba(0, 0, 0, 0.5) 50%, 
-        rgba(0, 0, 0, 0) 100% 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 0.4) 60%, 
+        rgba(0, 0, 0, 0) 100%
     );
 }
 
-/* Styles du Nom (Intégration de tes valeurs) */
 .athlete-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: white; /* Doit être blanc pour être visible sur le gradient */
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
 }
 
-/* Styles du Sport (Intégration de tes valeurs) */
 .athlete-sport {
-    /* Tu peux choisir de garder primary-color si elle contraste bien avec le noir, 
-       ou utiliser white si elle ne l'est pas. J'utilise la tienne par défaut. */
-    color: var(--primary-color); 
+    color: var(--primary-color); /* Utilisez votre couleur or/luxe ici */
     font-weight: 500;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
-    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
-/* Styles de la Description (Intégration de tes valeurs) */
 .athlete-description {
-    color: rgba(255, 255, 255, 0.8); /* Blanc légèrement transparent pour la description */
-    line-height: 1.6;
-    margin-bottom: 0;
-    font-size: 0.95rem; /* Ajusté pour cohérence */
-    /* Cache par défaut pour plus de clarté dans la carte */
-    display: none; 
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    /* Animation de la description au survol */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
 }
-/* Tu peux l'afficher au survol si tu veux un effet dynamique */
+
 .athlete-card:hover .athlete-description {
-    display: block; 
+    max-height: 100px; /* S'affiche au survol */
+    opacity: 1;
+    margin-top: 10px;
 }
-/* CTA */
+
+/* 6. BOUTON D'APPEL À L'ACTION (CTA) */
 .athletes-cta {
     text-align: center;
-    margin-top: 3rem;
-}
-
-.cta-text {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-top: 4rem;
 }
 
 .cta-button {
     display: inline-flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2.5rem;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-    font-weight: 500;
-    border-radius: var(--border-radius);
     text-decoration: none;
-    transition: all var(--transition-medium);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
     background-color: var(--primary-color);
     color: white;
-    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* About Section */
