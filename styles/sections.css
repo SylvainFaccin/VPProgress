@@ -236,7 +236,7 @@
     display: grid;
     /* CECI EST LA CLÉ : Trois colonnes de largeur égale */
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;
     /* Espace entre les cartes */
 
     /* On limite la largeur totale de la grille et on la centre */
@@ -331,6 +331,12 @@
         display: grid;
         /* CECI EST LA CLÉ : Trois colonnes de largeur égale */
         grid-template-columns: auto;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        margin-bottom: -3%;
+        padding: 1.5rem;
     }
 }
 
@@ -911,9 +917,20 @@
 }
 
 @keyframes swipePulse {
-    0% { transform: translateX(0); opacity: 0.5; }
-    50% { transform: translateX(8px); opacity: 1; }
-    100% { transform: translateX(0); opacity: 0.5; }
+    0% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateX(8px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
 }
 
 @media (max-width: 768px) {
