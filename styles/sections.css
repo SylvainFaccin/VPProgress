@@ -209,7 +209,7 @@
 .project-section {
     background-color: var(--background-white);
     /* Optionnel : un dégradé très subtil pour donner de la profondeur */
-    background: linear-gradient(to top, var(--background-white) 0%, #f8f9fa 1000%);
+    background: linear-gradient(80deg, #1e1e1e, #121212);
     padding: 6rem 0;
 }
 
@@ -558,7 +558,7 @@
 .realisations-section {
     background-color: var(--background-white);
     /* Optionnel : un dégradé très subtil pour donner de la profondeur */
-    background: linear-gradient(to bottom, var(--background-white) 0%, #f8f9fa 1000%);
+    background: linear-gradient(to bottom, var(--background-white) 0%, #484848 300%);
     padding: 6rem 0;
 }
 
