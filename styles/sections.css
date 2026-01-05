@@ -244,8 +244,6 @@
     margin: 3rem auto 0;
 }
 
-
-
 .feature-card {
     text-align: left;
     /* Le luxe préfère souvent l'alignement à gauche ou justifié */
@@ -318,6 +316,22 @@
     line-height: 1.7;
     font-size: 0.95rem;
     margin-bottom: 0;
+}
+
+/* Pour les tablettes et petits ordinateurs */
+@media (max-width: 1024px) {
+    .project-features {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Pour les téléphones */
+@media (max-width: 768px) {
+    .project-features {
+        display: grid;
+        /* CECI EST LA CLÉ : Trois colonnes de largeur égale */
+        grid-template-columns: auto;
+    }
 }
 
 /* =======================================
