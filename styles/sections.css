@@ -893,6 +893,35 @@
     }
 }
 
+.mobile-swipe-hint {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    color: var(--primary-light);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    animation: swipePulse 1.8s infinite;
+}
+
+.swipe-icon {
+    font-size: 1.2rem;
+}
+
+@keyframes swipePulse {
+    0% { transform: translateX(0); opacity: 0.5; }
+    50% { transform: translateX(8px); opacity: 1; }
+    100% { transform: translateX(0); opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+    .mobile-swipe-hint {
+        display: flex;
+    }
+}
+
 /* Contact Section */
 .contact-section {
     background-color: var(--background-gray);
