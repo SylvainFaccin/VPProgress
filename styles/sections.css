@@ -338,6 +338,11 @@
         margin-bottom: -3%;
         padding: 1.5rem;
     }
+
+    .feature-icon-wrapper {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 /* =======================================
