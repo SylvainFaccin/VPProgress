@@ -493,6 +493,7 @@
     color: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 /* =======================================
    RESPONSIVE ATHLÈTES
    ======================================= */
@@ -500,10 +501,11 @@
 /* Pour les tablettes et petits ordinateurs */
 @media (max-width: 1024px) {
     .athletes-grid {
-        gap: 3rem; /* On réduit l'espace de moitié */
+        gap: 3rem;
+        /* On réduit l'espace de moitié */
         padding: 0 20px;
-         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; 
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
     }
 }
 
@@ -512,10 +514,10 @@
     .athletes-grid {
         /* On force les 2 colonnes et on annule toute limite de largeur de colonne */
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; 
-        
+        grid-template-columns: 1fr 1fr !important;
+
         /* On réduit l'espace au minimum pour que ça rentre */
-        gap: 10px !important; 
+        gap: 10px !important;
         padding: 0 10px !important;
         max-width: 100% !important;
     }
@@ -523,9 +525,9 @@
     .athlete-card {
         /* On annule le max-width qui bloquait peut-être l'affichage côte à côte */
         max-width: 100% !important;
-        
+
         /* On réduit la hauteur car en largeur 50%, 500px c'est trop haut */
-        height: 350px !important; 
+        height: 350px !important;
     }
 
     /* On réduit la taille du texte car les cartes sont devenues très étroites */
@@ -563,7 +565,8 @@
 /* Mise en page en deux colonnes */
 .realisations-content-wrapper {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* La galerie est un peu plus large que le texte */
+    grid-template-columns: 1.2fr 0.8fr;
+    /* La galerie est un peu plus large que le texte */
     gap: 4rem;
     align-items: center;
     max-width: 1200px;
@@ -574,27 +577,31 @@
 .realisations-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; /* On réduit l'écart car les images sont fines */
-    justify-items: center; /* Centre les images dans leurs colonnes */
+    gap: 1rem;
+    /* On réduit l'écart car les images sont fines */
+    justify-items: center;
+    /* Centre les images dans leurs colonnes */
 }
 
 .gallery-item {
     width: 100%;
-    max-width: 250px; /* Limite la largeur pour éviter que l'image ne devienne trop haute */
+    max-width: 250px;
+    /* Limite la largeur pour éviter que l'image ne devienne trop haute */
     border-radius: var(--border-radius-large);
     overflow: hidden;
-    background-color: transparent; /* Pas de fond pour rester discret */
+    background-color: transparent;
+    /* Pas de fond pour rester discret */
 }
 
 .gallery-item img {
     width: 100%;
     /* FIXE LA HAUTEUR : Ajustez cette valeur (ex: 450px ou 500px) 
        pour que l'image tienne dans l'écran sans scroller */
-    height: 450px; 
-    
+    height: 450px;
+
     /* MAGIE : "contain" montre l'image entière sans zoomer dedans */
-    object-fit: contain; 
-    
+    object-fit: contain;
+
     display: block;
     filter: grayscale(0.2);
     transition: all 0.4s ease;
@@ -603,7 +610,8 @@
 /* Effet au survol */
 .gallery-item:hover img {
     filter: grayscale(0);
-    transform: scale(1.03); /* Zoom très léger pour ne pas déborder */
+    transform: scale(1.03);
+    /* Zoom très léger pour ne pas déborder */
 }
 
 /* --- TEXTE ET CONTENU (Droite) --- */
@@ -622,7 +630,8 @@
 .realisations-description {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: var(--text-secondary); /* Utilisation de votre variable de gris */
+    color: var(--text-secondary);
+    /* Utilisation de votre variable de gris */
     margin-bottom: 2.5rem;
 }
 
@@ -634,36 +643,41 @@
 }
 
 .realisations-text-content .cta-button:hover i {
-    transform: translateY(5px); /* La flèche descend au survol */
+    transform: translateY(5px);
+    /* La flèche descend au survol */
 }
+
 /* =======================================
    RESPONSIVE : Adaptation pour Mobile
    ======================================= */
 @media (max-width: 992px) {
     .realisations-content-wrapper {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr;
+        /* Une seule colonne */
         gap: 2rem;
-        display: flex; /* On passe en flex pour utiliser 'order' facilement */
-        flex-direction: column; 
+        display: flex;
+        /* On passe en flex pour utiliser 'order' facilement */
+        flex-direction: column;
     }
 
     /* On donne l'ordre 1 à la galerie pour qu'elle passe EN PREMIER */
     .realisations-gallery {
-        order: 1; 
-        max-width: 100%; /* Elle prend toute la largeur du téléphone */
+        order: 1;
+        max-width: 100%;
+        /* Elle prend toute la largeur du téléphone */
         margin: 0 auto;
     }
 
     /* On donne l'ordre 2 au texte pour qu'il passe EN DEUXIÈME */
     .realisations-text-content {
-        order: 2; 
+        order: 2;
         text-align: center;
         padding: 0;
     }
 
     /* On réduit un peu la hauteur des images sur mobile pour ne pas trop scroller */
     .gallery-item img {
-        height: 350px; 
+        height: 350px;
     }
 
     .realisations-subtitle {
@@ -678,7 +692,8 @@
 
 .about-section {
     background-color: var(--background-dark);
-    padding: 100px 20px; /* Un peu plus d'espace pour le luxe */
+    padding: 100px 20px;
+    /* Un peu plus d'espace pour le luxe */
     overflow-x: hidden;
 }
 
@@ -689,14 +704,16 @@
     gap: 20px;
     margin-bottom: 40px;
     flex-wrap: nowrap;
-    scroll-snap-type: x mandatory; /* Force l'aimantage */
+    scroll-snap-type: x mandatory;
+    /* Force l'aimantage */
     scroll-behavior: smooth;
     padding-bottom: 10px;
 }
 
 .founder-card {
     flex: 1;
-    min-width: 280px; /* Largeur équilibrée */
+    min-width: 280px;
+    /* Largeur équilibrée */
     background-color: var(--background-gray);
     border: 1px solid rgba(220, 178, 103, 0.15);
     border-radius: var(--border-radius-large);
@@ -716,7 +733,8 @@
 
 /* Correction de l'image : Cercle Parfait Garanti */
 .founder-image-wrapper {
-    width: 140px; /* Taille légèrement augmentée pour le visuel */
+    width: 140px;
+    /* Taille légèrement augmentée pour le visuel */
     height: 140px;
     margin-bottom: 25px;
     border-radius: 50%;
@@ -728,8 +746,10 @@
 .founder-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Coupe l'image sans la déformer */
-    border-radius: 50%; /* Force le cercle */
+    object-fit: cover;
+    /* Coupe l'image sans la déformer */
+    border-radius: 50%;
+    /* Force le cercle */
     display: block;
 }
 
@@ -755,7 +775,8 @@
     line-height: 1.6;
     font-size: 0.95rem;
     margin-bottom: 25px;
-    min-height: 75px; /* Garde les tags alignés */
+    min-height: 75px;
+    /* Garde les tags alignés */
 }
 
 .founder-expertise {
@@ -763,7 +784,8 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    margin-top: auto; /* Pousse les tags en bas de la carte */
+    margin-top: auto;
+    /* Pousse les tags en bas de la carte */
 }
 
 .expertise-tag {
@@ -780,7 +802,8 @@
 /* Vision Card - Premium Gradient */
 .vision-card {
     background: linear-gradient(145deg, #1e1e1e, #121212);
-    border-top: 4px solid var(--primary-color); /* Changé de gauche à haut pour le style */
+    border-top: 4px solid var(--primary-color);
+    /* Changé de gauche à haut pour le style */
     padding: 60px 40px;
     border-radius: var(--border-radius-large);
     text-align: center;
@@ -821,29 +844,37 @@
         padding: 0 10px;
 
     }
+
     .founder-card {
         min-width: 220px;
         padding: 30px 10px;
     }
-    .founder-name { font-size: 1.2rem; }
+
+    .founder-name {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 768px) {
+
     /* Mode Scroll Horizontal pour garder les 3 membres alignés sans casser le design */
     .founders-grid {
         justify-content: flex-start;
         overflow-x: auto;
         padding: 20px 10px 40px 10px;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+        scrollbar-width: none;
+        /* Cache la scrollbar sur Firefox */
     }
-    
+
     .founders-grid::-webkit-scrollbar {
-        display: none; /* Cache la scrollbar sur Chrome/Safari */
+        display: none;
+        /* Cache la scrollbar sur Chrome/Safari */
     }
 
     .founder-card {
-        flex: 0 0 80%; /* Chaque carte prend 80% de l'écran pour laisser voir la suivante */
+        flex: 0 0 80%;
+        /* Chaque carte prend 80% de l'écran pour laisser voir la suivante */
         max-width: 300px;
     }
 }
@@ -947,4 +978,3 @@
     background-color: var(--background-gray);
     transform: translateY(-2px);
 }
-

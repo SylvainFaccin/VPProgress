@@ -20,15 +20,15 @@
     display: flex;
     align-items: center;
     /* Pousse le premier élément (logo) à gauche et le reste à droite */
-    justify-content: space-between; 
+    justify-content: space-between;
     height: 100%;
-    
+
     /* 1. Prend toute la largeur de l'écran */
-    width: 100%; 
+    width: 100%;
     /* 2. Ajoute un petit espace sur les côtés pour éviter que le contenu ne colle au bord */
-    padding: 0 1rem; 
+    padding: 0 1rem;
     /* 3. S'assure qu'il n'y a pas de marges externes qui pourraient le centrer */
-    margin: 0; 
+    margin: 0;
 }
 
 /* Styles du Logo */
@@ -40,7 +40,7 @@
     color: var(--text-primary);
     text-decoration: none;
     /* S'assure que le logo est le premier élément à gauche */
-    margin-right: auto; 
+    margin-right: auto;
 }
 
 /* Placeholder pour l'image du logo */
@@ -49,7 +49,8 @@
     height: 40px;
     background-image: url("../resources/img/LogoVPP.png");
     background-size: contain;
-    background-repeat: no-repeat; /* Ajouté pour s'assurer que l'image ne se répète pas */
+    background-repeat: no-repeat;
+    /* Ajouté pour s'assurer que l'image ne se répète pas */
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
@@ -74,7 +75,7 @@
     margin: 0;
     padding: 0;
     /* CHANGEMENT ICI : Valeur spécifique et très grande pour la police */
-    font-size: large; 
+    font-size: large;
 }
 
 .nav-link {
