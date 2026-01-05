@@ -78,7 +78,7 @@
     <section id="projet" class="section project-section">
 
         <div class="section-header">
-            <h2 class="section-title">Notre Ambition</h2>     
+            <h2 class="section-title">Notre Ambition</h2>
             <div class="section-line"></div>
         </div>
 
@@ -495,26 +495,43 @@
         </div>
     </footer>
 
-    <!-- Simple JavaScript for mobile menu toggle -->
-    <script>
-        // Mobile menu toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+   <!-- Simple JavaScript for mobile menu toggle -->
+<script>
+    // Mobile menu toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-        navToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
+    navToggle.addEventListener('click', function (event) {
+        event.stopPropagation(); // Empêche le clic de se propager au document
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
 
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
         });
-    </script>
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+        const isClickInsideMenu = navMenu.contains(event.target);
+        const isClickOnToggle = navToggle.contains(event.target);
+
+        if (
+            navMenu.classList.contains('active') &&
+            !isClickInsideMenu &&
+            !isClickOnToggle
+        ) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        }
+    });
+</script>
+
 </body>
 
 </html>
