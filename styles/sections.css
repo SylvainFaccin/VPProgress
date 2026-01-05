@@ -711,15 +711,17 @@
     }
 }
 
+
 /* =======================================
     About Section - Premium Style
    ======================================= */
 
 .about-section {
     background-color: var(--background-dark);
-    padding: 100px 20px;
+    padding: 50px 20px;
     /* Un peu plus d'espace pour le luxe */
     overflow-x: hidden;
+    
 }
 
 /* Founders Grid - Force l'alignement horizontal */
@@ -727,7 +729,7 @@
     display: flex;
     justify-content: flex-start;
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 1px;
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
     /* Force l'aimantage */
@@ -799,23 +801,60 @@
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 0.95rem;
-    margin-bottom: 25px;
+    margin-bottom: 1px;
     min-height: 75px;
     /* Garde les tags alignés */
 }
 
-.founder-expertise {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+.founder-social {
     margin-top: auto;
-    /* Pousse les tags en bas de la carte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* Espace généreux entre les deux logos */
+    padding-top: 20px;
+}
+
+/* Style de base pour les deux liens */
+.linkedin-link,
+.mail-link {
+    font-size: 35px;
+    /* La taille que tu as choisie */
+    color: var(--primary-color);
+    transition: all var(--transition-medium);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0.85;
+    /* Un peu plus discret au repos */
+}
+
+/* Effet au survol spécifique à LinkedIn */
+.linkedin-link:hover {
+    color: #ffffff;
+    /* Ou une autre couleur contrastée de ton choix */
+    transform: translateY(-5px) scale(1.1);
+    opacity: 1;
+}
+
+/* Effet au survol spécifique au Mail */
+.mail-link:hover {
+    color: #ffffff;
+    /* Ou une autre couleur contrastée de ton choix */
+    transform: translateY(-5px) scale(1.1);
+    opacity: 1;
+}
+
+/* Optionnel : Ajout d'une ombre légère sur les icônes au survol */
+.linkedin-link:hover i,
+.mail-link:hover i {
+    filter: drop-shadow(0 5px 15px rgba(220, 178, 103, 0.4));
 }
 
 .expertise-tag {
     padding: 6px 14px;
-    background-color: rgba(220, 178, 103, 0.05);
     border: 1px solid var(--primary-dark);
     color: var(--primary-light);
     font-size: 0.7rem;
@@ -824,39 +863,92 @@
     text-transform: uppercase;
 }
 
-/* Vision Card - Premium Gradient */
-.vision-card {
-    background: linear-gradient(145deg, #1e1e1e, #121212);
-    border-top: 4px solid var(--primary-color);
-    /* Changé de gauche à haut pour le style */
-    padding: 60px 40px;
+/* SECTION interview*/
+.interview-section {
+    background: linear-gradient(180deg, #1e1e1e, #121212);
+}
+
+/* Container principal pour l'alignement */
+.interview-container {
+    display: flex;
+    align-items: center;
+    /* Centre verticalement le texte par rapport à la vidéo */
+    justify-content: center;
+    gap: 50px;
+    /* Espace entre la vidéo et le texte */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* CÔTÉ GAUCHE : Format Portrait */
+.video-wrapper.portrait {
+    flex: 0 0 320px;
+    /* Largeur fixe pour la vidéo portrait */
+    aspect-ratio: 9 / 16;
+    /* Format Instagram/TikTok */
+    background: #000;
+
     border-radius: var(--border-radius-large);
-    text-align: center;
+    overflow: hidden;
     box-shadow: var(--shadow-large);
 }
 
-.vision-title {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    letter-spacing: 2px;
+.video-wrapper.portrait iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.vision-text {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: var(--text-primary);
-    font-style: italic;
-    max-width: 850px;
-    margin: 0 auto 30px;
+/* CÔTÉ DROIT : Style Vision */
+.interview-content {
+    flex: 1;
+    text-align: left;
+    /* Texte aligné à gauche pour le contraste avec la vidéo */
+    background: linear-gradient(180deg, #1e1e1e, #121212);
+    padding: 40px;
+    border-radius: var(--border-radius-large);
+    border-left: 4px solid var(--primary-color);
+    /* Rappel de ton style card */
 }
 
-.vision-signature {
-    color: var(--primary-light);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 700;
+.interview-content .vision-title {
+    margin-bottom: 20px;
+    text-align: left;
+    /* On force l'alignement à gauche ici */
+}
+
+.interview-content .vision-text {
+    margin: 0 0 25px 0;
+    /* On retire le margin auto pour coller à gauche */
+    max-width: 100%;
+    font-size: 1.15rem;
+}
+
+/* RESPONSIVE : Si l'écran est trop petit (Mobile) */
+@media (max-width: 768px) {
+    .interview-container {
+        flex-direction: column;
+        /* Vidéo au-dessus du texte sur téléphone */
+        text-align: center;
+    }
+
+    .video-wrapper.portrait {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+        /* On limite la largeur sur mobile */
+    }
+
+    .interview-content {
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid var(--primary-color);
+    }
+
+    .interview-content .vision-title {
+        text-align: center;
+    }
 }
 
 /* =======================================
@@ -992,7 +1084,6 @@
     font-size: 1.5rem;
     width: 48px;
     height: 48px;
-    background-color: var(--shadow-light);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
