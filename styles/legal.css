@@ -1,0 +1,201 @@
+/* ==========================================
+   LEGAL PAGE - VP PROGRESS (CENTERED DESIGN)
+   ========================================== */
+
+:root {
+    --accent: #b59153;
+    --bg-dark: #0a0a0a;
+    --card-bg: #141414;
+    --text-primary: #ffffff;
+    --text-muted: #a0a0a0;
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.legal-container {
+    max-width: 850px; /* On réduit la largeur pour une lecture centrée parfaite */
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center; /* Tout est centré par défaut */
+}
+
+/* --- BOUTON RETOUR --- */
+/* Conteneur pour forcer l'alignement à gauche dans un environnement centré */
+.back-link-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Aligne le bouton à gauche */
+    margin-bottom: 30px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.back-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateX(-5px); /* Animation vers la gauche au lieu du haut */
+}
+
+/* --- HEADER --- */
+header {
+    margin-bottom: 80px;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3.5rem, 8vw, 5rem);
+    margin: 0;
+    background: linear-gradient(to bottom, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+/* --- SECTIONS (CARDS) --- */
+.legal-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    padding: 60px 40px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.legal-card:hover {
+    border-color: var(--primary-dark);
+    transform: translateY(-5px);
+}
+
+/* Titres des sections */
+.legal-card h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.legal-card h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background: var(--accent);
+    margin: 10px auto 0;
+}
+
+/* Contenu textuel */
+.card-content {
+    text-align: center;
+}
+
+.legal-card h3 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 30px 0 10px;
+}
+
+/* On retire les icônes du flux ou on les centre */
+.legal-card h3 i {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.legal-card p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 15px;
+}
+
+.legal-card strong {
+    color: var(--text-primary);
+}
+
+/* Listes centrées */
+.legal-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto;
+    max-width: 500px;
+}
+
+.legal-card li {
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between; /* Nom à gauche, Valeur à droite */
+    align-items: center;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.legal-card li:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--glass-border);
+}
+
+.legal-card li span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.legal-card li strong {
+    color: var(--accent);
+    font-size: 0.95rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 60px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    .legal-card {
+        padding: 40px 20px;
+    }
+    
+    .legal-card li {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}
