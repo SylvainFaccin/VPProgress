@@ -564,12 +564,6 @@
         font-size: 0.7rem !important;
     }
 
-    /* On cache la description sur mobile : dans une petite carte de 150px de large, 
-       le texte va recouvrir tout le visage de l'athlète */
-    .athlete-description {
-        display: none !important;
-    }
-
     .athlete-badge {
         width: 40px !important;
         height: 40px !important;
